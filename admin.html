@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Command Center | NexusFeed</title>
+  <link rel="stylesheet" href="styling.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="admin" class="app-layout admin-layout">
+  
+  <aside class="sidebar glass admin-sidebar">
+    <div class="brand-logo">NexusAdmin</div>
+    <nav class="side-nav">
+      <a href="app.html"><span class="icon">⬅️</span> Back to App</a>
+      <a href="admin.html" class="active"><span class="icon">📊</span> Dashboard</a>
+      <a href="#" id="openChatBtn"><span class="icon">💬</span> Support DMs <span id="msgBadge" class="badge danger hidden">!</span></a>
+    </nav>
+    <div class="sidebar-footer mt-auto">
+      <div class="user-mini-profile" id="sidebarProfile"></div>
+      <button id="logoutBtn" class="btn btn-outline btn-block mt-1">Logout</button>
+    </div>
+  </aside>
+
+  <main class="main-content full-width">
+    <header class="admin-topbar glass">
+      <div>
+        <h2>Command Center</h2>
+        <p class="text-muted text-sm">Advanced System Moderation & Analytics</p>
+      </div>
+      <div class="admin-actions">
+        <span class="badge superadmin" id="adminRoleIndicator">Admin Access Active</span>
+        <button id="resetAllBtn" class="btn btn-danger btn-sm">⚠️ Factory Reset</button>
+      </div>
+    </header>
+
+    <div class="admin-stats-grid">
+      <div class="stat-card glass">
+        <h3 id="totalUsers">0</h3>
+        <p class="text-muted">Total Users</p>
+      </div>
+      <div class="stat-card glass">
+        <h3 id="totalPosts">0</h3>
+        <p class="text-muted">Total Posts</p>
+      </div>
+      <div class="stat-card glass">
+        <h3 id="totalAiFlags">0</h3>
+        <p class="text-muted">Toxic/Spam AI Flags</p>
+      </div>
+      <div class="stat-card glass">
+        <h3 id="totalAdmins">0</h3>
+        <p class="text-muted">Staff Members</p>
+      </div>
+    </div>
+
+    <section class="admin-panel glass mt-2">
+      <div class="tabs" id="adminTabs">
+        <button class="tab active" data-target="users">👥 User Management</button>
+        <button class="tab" data-target="posts">🛡️ Content Moderation</button>
+        <button class="tab" data-target="profile">👤 My Profile</button>
+        <button class="tab" data-target="settings">⚙️ System Settings</button>
+        <button class="tab" data-target="logs">📜 System Logs</button>
+      </div>
+      
+      <div class="admin-filters hidden" id="userFilters">
+        <input type="text" id="userSearchBox" class="filter-input" placeholder="Search users by name or email...">
+      </div>
+
+      <div id="adminContent" class="admin-content table-responsive"></div>
+    </section>
+  </main>
+
+  <div id="dynamicModals"></div>
+  <div id="toast" class="toast"></div>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | NexusFeed</title>
+  <link rel="stylesheet" href="styling.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="app" class="app-layout">
+  
+  <div class="announcement-bar hidden" id="globalAnnouncementBar">
+    <div class="marquee-track"><span id="announcementText"></span></div>
+  </div>
+
+  <aside class="sidebar glass">
+    <div class="brand-logo">NexusFeed</div>
+    <nav class="side-nav">
+      <a href="app.html" class="active"><span class="icon">🏠</span> Home</a>
+      <a href="profile.html" id="myProfileNav"><span class="icon">👤</span> My Profile</a>
+      <a href="#" id="openChatBtn"><span class="icon">💬</span> Direct Messages <span id="msgBadge" class="badge danger hidden">!</span></a>
+      <a href="admin.html" id="adminLink" class="hidden"><span class="icon">🛡️</span> Admin Panel</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-mini-profile" id="sidebarProfile"></div>
+      <button id="logoutBtn" class="btn btn-outline btn-block mt-1">Logout</button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="mobile-header glass hidden-desktop">
+      <div class="brand-logo sm">NexusFeed</div>
+      <button class="menu-toggle" id="mobileMenuBtn">☰</button>
+    </header>
+
+    <div class="feed-header">
+      <h2>Home Feed</h2>
+    </div>
+
+    <section class="create-post glass">
+      <form id="postForm">
+        <div class="create-post-inner">
+          <div id="createPostAvatar"></div>
+          <textarea id="postContent" placeholder="What's on your mind?" rows="3" required maxlength="800"></textarea>
+        </div>
+        <div class="post-actions">
+          <span id="charCount" class="text-muted">0/800</span>
+          <button type="submit" class="btn btn-primary">Post</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="feedContainer" class="feed-container"></section>
+  </main>
+
+  <aside class="right-sidebar">
+    <div class="widget glass">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search posts...">
+      </div>
+    </div>
+    <!-- Protected Admin Widgets will inject here dynamically -->
+    <div id="adminSidebarWidgets"></div>
+  </aside>
+
+  <div id="dynamicModals"></div>
+  <div id="toast" class="toast"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | NexusFeed</title>
+  <link rel="stylesheet" href="styling.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="profile" class="app-layout">
+  
+  <div class="announcement-bar hidden" id="globalAnnouncementBar">
+    <div class="marquee-track"><span id="announcementText"></span></div>
+  </div>
+
+  <aside class="sidebar glass">
+    <div class="brand-logo">NexusFeed</div>
+    <nav class="side-nav">
+      <a href="app.html"><span class="icon">🏠</span> Home</a>
+      <a href="profile.html" class="active" id="myProfileNav"><span class="icon">👤</span> My Profile</a>
+      <a href="#" id="openChatBtn"><span class="icon">💬</span> Direct Messages</a>
+      <a href="admin.html" id="adminLink" class="hidden"><span class="icon">🛡️</span> Admin Panel</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-mini-profile" id="sidebarProfile"></div>
+      <button id="logoutBtn" class="btn btn-outline btn-block mt-1">Logout</button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="mobile-header glass hidden-desktop">
+      <div class="brand-logo sm">NexusFeed</div>
+      <button class="menu-toggle" id="mobileMenuBtn">☰</button>
+    </header>
+
+    <div class="profile-cover"></div>
+    <section class="profile-header glass">
+      <div class="profile-avatar-large" id="profileAvatar"></div>
+      <div class="profile-info">
+        <div class="profile-title-row">
+          <h2 id="profileUsername">Loading...</h2>
+          <div id="profileActionBtns"></div>
+        </div>
+        <p id="profileEmail" class="text-muted"></p>
+        <p id="profileBio" class="profile-bio">Loading bio...</p>
+        <div class="profile-meta">
+          <span class="badge" id="profileRole">User</span>
+          <span id="profileJoined" class="text-muted"></span>
+        </div>
+        <div class="profile-stats">
+          <div class="stat"><strong id="postCount">0</strong> Posts</div>
+          <div class="stat"><strong id="totalLikesRecv">0</strong> Likes Received</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="feed-header mt-2">
+      <h3 id="feedOwnerTitle">User's Activity</h3>
+    </div>
+    <section id="userPostsContainer" class="feed-container"></section>
+  </main>
+
+  <aside class="right-sidebar">
+    <div class="widget glass">
+      <h3>About Profiles</h3>
+      <p class="text-muted text-sm mt-1">Click on any username in the feed to visit their profile and see their specific timeline.</p>
+    </div>
+    <div id="adminSidebarWidgets"></div>
+  </aside>
+
+  <div id="dynamicModals"></div>
+  <div id="toast" class="toast"></div>
+  <script src="main.js"></script>
+</body>
+</html>

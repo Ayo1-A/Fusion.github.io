@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome | NexusFeed</title>
+  <link rel="stylesheet" href="styling.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="auth" class="auth-page">
+  <div class="auth-wrapper">
+    <div class="auth-hero">
+      <div class="hero-content">
+        <h1 class="hero-brand">NexusFeed</h1>
+        <p class="hero-tagline">The next generation network for professionals and creators.</p>
+        <div class="hero-features">
+          <div class="feature-item">✨ Connect seamlessly</div>
+          <div class="feature-item">🚀 Share & Reshare content</div>
+          <div class="feature-item">🛡️ Safe & Secure Community</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="auth-container glass">
+      <!-- Login -->
+      <div id="loginSection" class="auth-card fade-in">
+        <div class="auth-header">
+          <h2>Welcome Back</h2>
+          <p class="text-muted">Sign in to your account</p>
+        </div>
+        <form id="loginForm">
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="loginEmail" required placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="loginPassword" required placeholder="••••••••">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+        </form>
+        <p class="auth-link">Don't have an account? <a href="#" id="showRegister">Create one</a></p>
+      </div>
+
+      <!-- Registration -->
+      <div id="registerSection" class="auth-card hidden fade-in">
+        <div class="auth-header">
+          <h2>Create Account</h2>
+          <p class="text-muted">Join the community today</p>
+        </div>
+        <form id="registerForm">
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" id="regUsername" required minlength="3" maxlength="20" placeholder="johndoe">
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="regEmail" required placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="regPassword" required minlength="8" placeholder="••••••••">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+        </form>
+        <p class="auth-link">Already have an account? <a href="#" id="showLogin">Sign In</a></p>
+      </div>
+    </div>
+  </div>
+  
+  <div id="toast" class="toast"></div>
+  <script src="main.js"></script>
+</body>
+</html>
